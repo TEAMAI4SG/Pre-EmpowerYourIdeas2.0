@@ -130,17 +130,29 @@ if not st.session_state['current_problem']:
         st.session_state['conversation'].append({'user': problem, 'ai': response})
         st.session_state['analysis_completed'] = True
 
-# --- Display AI Response (Only if a problem is set) ---
-if st.session_state['current_problem']:
+# 1. If there is no current problem, show the input form
+if not st.session_state['current_problem']:
+    st.subheader("Let's Analyze a Real-World Problem!")
+    problem = st.text_input(...)
+    links = st.text_area(...)
+    uploaded_files = st.file_uploader(...)
+    
+    if st.button("Analyze the Problem") and problem:
+        # Summaries, parsing, call the model, etc.
+        st.session_state['current_problem'] = problem
+        response = get_analysis(...)
+        st.session_state['conversation'].append({'user': problem, 'ai': response})
+        st.session_state['analysis_completed'] = True
+
+# 2. Else, if a problem is set, display results and let the user reset
+else:
     st.subheader("Analysis Results")
-
-    # Display the AI response directly (No user messages, No text bubbles)
     for entry in st.session_state['conversation']:
-        st.markdown(entry['ai'])  # Just show AI output as Markdown
-
-    # --- Move "Start New Problem" Button Here ---
+        st.markdown(entry['ai'])
+    
     if st.button("🔄 Start New Problem"):
         st.session_state['conversation'] = []
         st.session_state['current_problem'] = ""
         st.session_state['analysis_completed'] = False
         st.rerun()
+
