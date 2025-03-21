@@ -1,3 +1,5 @@
 [theme]
-primaryColor = "#2b7d3f"  # Seagreen buttons
-secondaryBackgroundColor = "#d6f5e3"  # Slightly darker sidebar
+primaryColor = "#4CAF50"  # Adjust to your preferred sidebar color
+backgroundColor = "#A7D7C5"
+secondaryBackgroundColor = "#6FAF8F"  # Sidebar color
+textColor = "#000000"
