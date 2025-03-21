@@ -1,5 +1,5 @@
 [theme]
-primaryColor = "#4CAF50"  # Adjust to your preferred sidebar color
-backgroundColor = "#A7D7C5"
-secondaryBackgroundColor = "#6FAF8F"  # Sidebar color
-textColor = "#000000"
+primaryColor = "#4CAF50"  # Button and highlight colors
+backgroundColor = "#FFFFFF"  # White overall background
+secondaryBackgroundColor = "#A7D7C5"  # Sidebar background color
+textColor = "#000000"  # Black text for readability
